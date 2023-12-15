@@ -1,0 +1,29 @@
+img {
+    width: 200px;
+    height: 200px;
+}
+
+#red-text {
+    size: 40;
+    color: red;
+}
+
+#green-text {
+    size: 40;
+    color: green;
+}
+
+#blue-text {
+    size: 40;
+    color: blue;
+}
+
+#orange-text {
+    size: 40;
+    color: orange;
+}
+
+#yellow-text {
+    size: 40;
+    color: yellow;
+}
