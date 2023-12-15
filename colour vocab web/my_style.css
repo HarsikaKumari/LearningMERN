@@ -4,26 +4,26 @@ img {
 }
 
 #red-text {
-    size: 40;
+    font-weight: normal;
     color: red;
 }
 
 #green-text {
-    size: 40;
+    font-weight: normal;
     color: green;
 }
 
 #blue-text {
-    size: 40;
+    font-weight: normal;
     color: blue;
 }
 
 #orange-text {
-    size: 40;
+    font-weight: normal;
     color: orange;
 }
 
 #yellow-text {
-    size: 40;
+    font-weight: normal;
     color: yellow;
 }
