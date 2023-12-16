@@ -1,0 +1,31 @@
+body {
+    background-color: black;
+   
+}
+div {
+    margin-left: 25%;
+    width: 50%;
+    margin-top: 50px;
+
+
+}
+img{
+    border: 5px solid white;
+    border-radius: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+#heading {
+    font-family: rubik doodle shadow;
+    text-align: center;
+    color: white;
+    font-size: 40pt;
+    
+}
+
+#para_text {
+    color: white;
+    font-size: 10pt;
+    text-align: center;
+}
