@@ -149,60 +149,7 @@ function lifeInWeeks(age) {
 
 lifeInWeeks(56); //You have 12410 days, 1768 weeks, and 408 months left.
 
-function bmiCalculator(weight, height) {
-  var calcBmi = Math.round(weight / Math.pow(height, 2));
-  return calcBmi;
-}
-var bmi = bmiCalculator(65, 1.8);
-console.log(bmi); //20
 
-var n = Math.random();
-n *= 6;
-n = Math.floor(n) + 1;
-console.log(n);
-
-prompt("Give the first number");
-prompt("Give the second number");
-var n = Math.random();
-n *= 100;
-n = Math.round(n) + 1;
-
-if (n > 70) {
-  alert(
-    "Your love score is " + n + ", you love each other like romio and juliet"
-  );
-}
-if (n > 30 && n < 70) {
-  alert("Your love score is " + n);
-} else {
-  alert(
-    "Your love score is " + n + ", you go with each other like oil and water"
-  );
-}
-
-function bmiCalculator(weight, height) {
-  var caclBmi = weight / Math.pow(height, 2);
-
-  if (caclBmi <= 18.5) {
-    return "Your BMI is " + caclBmi + ", so you are underweight.";
-  }
-
-  if (caclBmi >= 18.5 && caclBmi <= 24.9) {
-    return "Your BMI is " + caclBmi + ", so you have a normal weight.";
-  } else {
-    return "Your BMI is " + caclBmi + ", so you are overweight.";
-  }
-}
-
-function isLeap(year) {
-  //Write your code here.
-
-  if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
-    return "Leap year.";
-  } else {
-    return "Not leap year.";
-  }
-}
 
 var guestName = ["ashok", "alok", "vivek", "tarun", "prithvi", "sheetal"];
 var userName = prompt("Enter your name:");
@@ -240,24 +187,7 @@ function whosPaying(names) {
 }
 
 
-var output = [];
-var count = 1;
-function fizzBuzz() {
-    while(count <= 100) {
-        
-  if (count % 3 === 0 && count % 5 === 0) {
-    output.push("fizzbuzz");
-  } else if (count % 3 === 0) {
-    output.push("fizz");
-  } else if (count % 5 === 0) {
-    output.push("buzz");
-  } else {
-    output.push(count);
-  }
-  count++;
-    }
-  console.log(output);
-}
+
 
 
 
@@ -273,44 +203,6 @@ function bottleSong () {
 
 
 
-var output = [];
-function fizzBuzz() {
-     
-    for(var count = 100; count > 0; count--) {
-  if (count % 3 === 0 && count % 5 === 0) {
-    output.push("fizzbuzz");
-  } else if (count % 3 === 0) {
-    output.push("fizz");
-  } else if (count % 5 === 0) {
-    output.push("buzz");
-  } else {
-    output.push(count);
-  }
-    }
-  console.log(output);
-}
 
 
-function fibonacciGenerator (n) {
 
-      //Write your code here:
-      var output = [];
-      
-      if (n === 1) {
-          output = [0];
-      }
-      else if(n === 2) {
-          output = [0,1];
-      }
-      else {
-          output = [0,1];
-          for(var i = 2; i < n; i++) {
-              
-              output.push(output[output.length - 2] + output[output.length - 1]);
-          }
-          }
-      return output; 
-  }
-  
-  output = fibonacciGenerator (7);
-  console.log(output);
