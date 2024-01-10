@@ -1,0 +1,27 @@
+shishirshekhar@Shishirs-MacBook-Air ~ % ls
+Applications			Postman
+Cisco Packet Tracer 8.2.0	Public
+Desktop				PycharmProjects
+Documents			StudioProjects
+Downloads			flutter
+Drive				iCloud Drive (Archive)
+Library				python3.10
+Movies				src
+Music				tk-0.1.0
+NetBeansProjects		tk-0.1.0 2
+Pictures
+shishirshekhar@Shishirs-MacBook-Air ~ % cd drive/codes/web_dev/harsika 
+shishirshekhar@Shishirs-MacBook-Air harsika % touch text.txt
+shishirshekhar@Shishirs-MacBook-Air harsika % open -a /Applications/visual/ studio/ code text.txt 
+The files /Users/shishirshekhar/Drive/codes/web_dev/harsika/studio and /Users/shishirshekhar/Drive/codes/web_dev/harsika/code do not exist.
+shishirshekhar@Shishirs-MacBook-Air harsika % rm text.txt
+shishirshekhar@Shishirs-MacBook-Air harsika % cmd a
+zsh: command not found: cmd
+shishirshekhar@Shishirs-MacBook-Air harsika % cmd A
+zsh: command not found: cmd
+shishirshekhar@Shishirs-MacBook-Air harsika % Cm a
+zsh: command not found: Cm
+shishirshekhar@Shishirs-MacBook-Air harsika % Cmd a
+zsh: command not found: Cmd
+shishirshekhar@Shishirs-MacBook-Air harsika % 
+
