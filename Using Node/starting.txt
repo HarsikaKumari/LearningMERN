@@ -1,0 +1,64 @@
+chruby: unknown Ruby: ruby-3.1.2
+shishirshekhar@Shishirs-MacBook-Air harsika % %node -v
+fg: job not found: node
+shishirshekhar@Shishirs-MacBook-Air harsika % node -v
+v20.3.1
+shishirshekhar@Shishirs-MacBook-Air harsika % node
+Welcome to Node.js v20.3.1.
+Type ".help" for more information.
+> .help
+.break    Sometimes you get stuck, this gets you out
+.clear    Alias for .break
+.editor   Enter editor mode
+.exit     Exit the REPL
+.help     Print this help message
+.load     Load JS from a file into the REPL session
+.save     Save all evaluated commands in this REPL session to a file
+
+Press Ctrl+C to abort current expression, Ctrl+D to exit the REPL
+> .exit
+shishirshekhar@Shishirs-MacBook-Air harsika % 5+5
+zsh: command not found: 5+5
+shishirshekhar@Shishirs-MacBook-Air harsika % node
+Welcome to Node.js v20.3.1.
+Type ".help" for more information.
+> 5+5
+10
+
+chruby: unknown Ruby: ruby-3.1.2
+shishirshekhar@Shishirs-MacBook-Air harsika % cd '/Users/shishirshekhar/Drive/codes/web_dev/harsika/2.1 Using Node'
+shishirshekhar@Shishirs-MacBook-Air 2.1 Using Node % node index.js 
+shishirshekhar@Shishirs-MacBook-Air 2.1 Using Node % node index.js
+Hello from Node!!
+shishirshekhar@Shishirs-MacBook-Air 2.1 Using Node % 
+
+chruby: unknown Ruby: ruby-3.1.2
+shishirshekhar@Shishirs-MacBook-Air harsika % cd '/Users/shishirshekhar/Drive/codes/web_dev/harsika/2.1 Using Node'
+shishirshekhar@Shishirs-MacBook-Air 2.1 Using Node % node index.js 
+shishirshekhar@Shishirs-MacBook-Air 2.1 Using Node % node index.js
+Hello from Node!!
+shishirshekhar@Shishirs-MacBook-Air 2.1 Using Node % cd'/Users/shishirshekhar/Drive/codes/web_dev/harsika/2.1 Using Node'
+zsh: no such file or directory: cd/Users/shishirshekhar/Drive/codes/web_dev/harsika/2.1 Using Node
+shishirshekhar@Shishirs-MacBook-Air 2.1 Using Node % node
+Welcome to Node.js v20.3.1.
+Type ".help" for more information.
+> .exit
+shishirshekhar@Shishirs-MacBook-Air 2.1 Using Node % cd'/Users/shishirshekhar/Drive/codes/web_dev/harsika/2.1 Using Node'
+zsh: no such file or directory: cd/Users/shishirshekhar/Drive/codes/web_dev/harsika/2.1 Using Node
+shishirshekhar@Shishirs-MacBook-Air 2.1 Using Node % node index.js 
+The file have been console logged.
+shishirshekhar@Shishirs-MacBook-Air 2.1 Using Node %
+
+chruby: unknown Ruby: ruby-3.1.2
+shishirshekhar@Shishirs-MacBook-Air harsika % cd '/Users/shishirshekhar/Drive/codes/web_dev/harsika/2.1 Using Node'
+shishirshekhar@Shishirs-MacBook-Air 2.1 Using Node % node index.js                                                        
+The file have been console logged.
+Hello from NodeJs!
+shishirshekhar@Shishirs-MacBook-Air 2.1 Using Node % node index.js
+The file have been console logged.
+Hello from NodeJs!
+shishirshekhar@Shishirs-MacBook-Air 2.1 Using Node % node index.js
+Hello from NodeJs!
+Hello from harsika!
+
+shishirshekhar@Shishirs-MacBook-Air 2.1 Using Node % 
