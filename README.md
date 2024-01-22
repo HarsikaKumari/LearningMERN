@@ -1,3 +1,3 @@
 # Learning Frontend
 
-I will be updating all my learnings here
+I will be updating all my learnings here.
