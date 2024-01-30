@@ -3,7 +3,8 @@ CREATE TABLE customer ( id int NOT NULL, name string, price Money, PRIMARY KEY (
 -- insert in table
 INSERT INTO customer VALUES (2, "pencil", 0.8, 12)
 INSERT INTO customer VALUES (1, "Pen", 1.20)
-INSERT INTO customer (id, name) VALUES (2,"pencil")INSERT INTO customer (id, name) VALUES (2,"pencil")
+INSERT INTO customer (id, name) VALUES (2,"pencil")
+INSERT INTO customer (id, name) VALUES (2,"pencil")
 -- show table
 SELECT * FROM customer 
 SELECT name, price FROM customer 
@@ -22,16 +23,26 @@ UPDATE customer
 SET stock = 12
 WHERE id = 2;
 -- alter table
+ALTER TABLE customer add adress string;
 ALTER TABLE customer
 ADD stock int;
 -- DELETE record
 DELETE FROM customer 
 WHERE id = 2;
 -- FOREIGN KEY concept
-CREATE TABLE Orders (
-    OrderID int NOT NULL,
-    OrderNumber int NOT NULL,
-    PersonID int,
-    PRIMARY KEY (OrderID),
-    FOREIGN KEY (PersonID) REFERENCES customer(id)
-);
+CREATE TABLE orders(
+orderId int NOT NULL,
+orderNumber int,
+customerID int,
+productId int,
+PRIMARY KEY (orderId)
+FOREIGN KEY (productId) REFERENCES Product (id)
+FOREIGN KEY (customerId) REFERENCES customer (id)
+)
+-- RENAMe a TABLE
+ALTER TABLE customer to product;
+RENAME TABLE customer TO products;
+-- joining tables
+SELECT orders.ordernumber, customer.customernane, customer.adress
+FROM orders
+INNER JOIN customer on orders.orderid = customer.id
