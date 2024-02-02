@@ -19,22 +19,24 @@ app.get("/noAuth", async (req, res) => {
   // Use axios to hit up the /random endpoint
 try {
   const result = await axios.get(API_URL + "/random");
-  res.render("index.ejs", {content: JSON.stringify(result.data)});
+  res.render("index.ejs", { content: JSON.stringify(result.data) });
 } catch (error) {
-  res.status(404).send (error.message);
+  res.status(404).send(error.message);
 }
   });
 
 app.get("/basicAuth", async (req, res) => {
   // Write your code here to hit up the /all endpoint
   try {
-    const result = await axios.get(API_URL + "/all?page2", {
+    const result = await axios.get(API_URL + "/all?page=2", 
+    {},
+    {
       auth: {
         username: yourUsername,
         password: yourPassword,
       },
     });
-    res.render("index.ejs", { content: JSON.stringify(result.data)});
+    res.render("index.ejs", { content: JSON.stringify(result.data) });
   } catch (error) {
     res.status(404).send(error.message);
   }
