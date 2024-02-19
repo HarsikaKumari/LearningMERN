@@ -75,7 +75,6 @@ app.post("/delete-secret", async (req, res) => {
   const searchId = req.body.id;
   try {
     const result = await axios.delete(API_URL + "/secrets/" + searchId,
-    req.body,
     config 
     );
   } catch (error) {
