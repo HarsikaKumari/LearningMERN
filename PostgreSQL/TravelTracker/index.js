@@ -18,6 +18,7 @@ db.connect();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+//Get home page:-
 app.get("/", async (req, res) => {
   const result = await db.query("select country_code from visited_countries");
   let countries = [];
