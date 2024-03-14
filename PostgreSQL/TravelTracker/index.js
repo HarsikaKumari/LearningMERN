@@ -18,17 +18,25 @@ db.connect();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+async function checkVisisted() {
+  const result = await db.query("select country_code from visited_countries");
+
+  let countries = [];
+  result.rows.forEach((country) => {
+    countries.push(country.country_code);
+  });
+  return countries;
+}
+
 //Get home page:-
 app.get("/", async (req, res) => {
-  const result = await db.query("select country_code from visited_countries");
-  let countries = [];
-  result.rows.forEach((country_name) => {
-    countries.push(country_name.country_code);
-  });
-  console.log(result.rows);
-  console.log(countries);
+  const countries = await checkVisisted();
   res.render("index.ejs", {countries: countries, total: countries.length});
-  db.end();
+});
+
+//post data:-
+app.post("submit", async(req, res) => {
+  const addInfo = await db.query ("insert into visited_countries values($1)()")
 });
 
 app.listen(port, () => {
