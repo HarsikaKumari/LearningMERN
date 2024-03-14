@@ -31,12 +31,28 @@ async function checkVisisted() {
 //Get home page:-
 app.get("/", async (req, res) => {
   const countries = await checkVisisted();
-  res.render("index.ejs", {countries: countries, total: countries.length});
+  res.render("index.ejs", { countries: countries, total: countries.length });
 });
 
-//post data:-
-app.post("submit", async(req, res) => {
-  const addInfo = await db.query ("insert into visited_countries values($1)()")
+app.post("/add", async (req, res) => {
+  const input = req.body["country"];
+
+  const result = await db.query(
+    "SELECT country_code FROM countries WHERE country_name = $1",
+    [input]
+  );
+
+  if (result.rows.length !== 0) {
+    const data = result.rows[0];
+    console.log("data = " + data);
+    const country_code = data.country_code;
+
+    await db.query("insert into visited_countries (country_code) values = $1", [
+      country_code,
+    ]);
+  }
+
+  res.redirect("/");
 });
 
 app.listen(port, () => {
