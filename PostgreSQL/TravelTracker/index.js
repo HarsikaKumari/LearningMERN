@@ -16,7 +16,16 @@ const db = new pg.Client({
 db.connect();
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.static("public"));
+
+function titleCase(str) {
+  str = str.toLowerCase().split(' ');
+  for (let i = 0; i < str.length; i++) {
+      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+  }
+  return str.join(' ');
+}
 
 async function checkVisisted() {
   const result = await db.query("select country_code from visited_countries");
@@ -36,18 +45,19 @@ app.get("/", async (req, res) => {
 
 app.post("/add", async (req, res) => {
   const input = req.body["country"];
-
+  
   const result = await db.query(
     "SELECT country_code FROM countries WHERE country_name = $1",
-    [input]
+    [titleCase(input)]
   );
+  // return res.json(result);
 
   if (result.rows.length !== 0) {
     const data = result.rows[0];
     console.log("data = " + data);
     const country_code = data.country_code;
 
-    await db.query("insert into visited_countries (country_code) values = $1", [
+    await db.query("insert into visited_countries (country_code) values ($1)", [
       country_code,
     ]);
   }
