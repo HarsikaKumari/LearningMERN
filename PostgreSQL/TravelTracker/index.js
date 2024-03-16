@@ -27,7 +27,7 @@ function titleCase(str) {
   return str.join(' ');
 }
 
-async function checkVisisted() {
+async function checkVisited() {
   const result = await db.query("select country_code from visited_countries");
 
   let countries = [];
@@ -39,7 +39,7 @@ async function checkVisisted() {
 
 //Get home page:-
 app.get("/", async (req, res) => {
-  const countries = await checkVisisted();
+  const countries = await checkVisited();
   res.render("index.ejs", { countries: countries, total: countries.length });
 });
 
@@ -58,7 +58,7 @@ app.post("/add", async (req, res) => {
     const visited = await db.query("SELECT country_code FROM visited_countries WHERE country_code = $1", [country_code]);
 
     if (visited.rows.length !== 0) {
-      const countries = await checkVisisted();
+      const countries = await checkVisited();
 
       return res.render("index.ejs", {
         countries: countries,
@@ -72,7 +72,7 @@ app.post("/add", async (req, res) => {
     }
   } else {
     console.log("this country does not exists!!");
-    const countries = await checkVisisted();
+    const countries = await checkVisited();
       return res.render("index.ejs", {
       countries: countries,
       total: countries.length,
