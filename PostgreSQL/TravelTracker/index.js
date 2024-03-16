@@ -22,7 +22,7 @@ app.use(express.static("public"));
 function titleCase(str) {
   str = str.toLowerCase().split(' ');
   for (let i = 0; i < str.length; i++) {
-      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
   }
   return str.join(' ');
 }
@@ -43,26 +43,43 @@ app.get("/", async (req, res) => {
   res.render("index.ejs", { countries: countries, total: countries.length });
 });
 
+//Post route, adding countries:-
 app.post("/add", async (req, res) => {
   const input = req.body["country"];
-  
+
   const result = await db.query(
     "SELECT country_code FROM countries WHERE country_name = $1",
     [titleCase(input)]
   );
-  // return res.json(result);
 
   if (result.rows.length !== 0) {
     const data = result.rows[0];
-    console.log("data = " + data);
     const country_code = data.country_code;
+    const visited = await db.query("SELECT country_code FROM visited_countries WHERE country_code = $1", [country_code]);
 
-    await db.query("insert into visited_countries (country_code) values ($1)", [
-      country_code,
-    ]);
+    if (visited.rows.length !== 0) {
+      const countries = await checkVisisted();
+
+      return res.render("index.ejs", {
+        countries: countries,
+        total: countries.length,
+        error: "Country already visited!!",
+      });
+    } else {
+      await db.query("insert into visited_countries (country_code) values ($1)", [
+        country_code,
+      ]);
+    }
+  } else {
+    console.log("this country does not exists!!");
+    const countries = await checkVisisted();
+      return res.render("index.ejs", {
+      countries: countries,
+      total: countries.length,
+      error: "Country does not exists!!",
+    });
   }
 
-  res.redirect("/");
 });
 
 app.listen(port, () => {
