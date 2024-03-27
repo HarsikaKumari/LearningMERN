@@ -34,9 +34,9 @@ app.post("/register", async (req, res) => {
   const password = req.body.password;
 
   try {
-    const checkResult = db.query("SELECT * FROM users WHERE email = $1", [email]);
+    const checkResult =  await db.query("SELECT * FROM users WHERE email = $1", [email]);
 
-    if ((await checkResult).rows.length > 0) {
+    if (checkResult.rows.length > 0) {
       res.send("User already exists. Try logging in!");
     } else {
       const result = await db.query("INSERT INTO users(email, password) VALUES ($1, $2)", [email, password]);
@@ -54,10 +54,10 @@ app.post("/login", async (req, res) => {
   const password = req.body.password;
 
   try {
-    const result = db.query("SELECT * FROM users WHERE email = $1", [email,]);
+    const result = await db.query("SELECT * FROM users WHERE email = $1", [email,]);
     console.log(result);
     
-    if ((await result).rows.length > 0) {
+    if (result.rows.length > 0) {
       const user = result.rows[0];
       console.log(user);
       const userPassword = user.password;
