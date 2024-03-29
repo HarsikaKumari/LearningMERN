@@ -1,11 +1,12 @@
 import express from "express";
 import bodyParser from "body-parser";
-import pg from "pg";
+import pg, { Client } from "pg";
 import bcrypt from "bcrypt";
 import passport from "passport";
 import { Strategy } from "passport-local";
 import session from "express-session";
 import env from "dotenv";
+import GoggleStrategy from "passport-google-oauth2";
 
 const app = express();
 const port = 3000;
@@ -19,6 +20,7 @@ app.use(
     saveUninitialized: true,
   })
 );
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
@@ -56,13 +58,19 @@ app.get("/logout", (req, res) => {
 });
 
 app.get("/secrets", (req, res) => {
-  // console.log(req.user);
+  console.log(req.user);
   if (req.isAuthenticated()) {
     res.render("secrets.ejs");
   } else {
     res.redirect("/login");
   }
 });
+
+app.get("/auth/goggle", 
+passport.authenticate("goggle", {
+  scope: [profile, email],
+})
+);
 
 app.post(
   "/login",
@@ -105,7 +113,7 @@ app.post("/register", async (req, res) => {
   }
 });
 
-passport.use(
+passport.use( "local",
   new Strategy(async function verify(username, password, cb) {
     try {
       const result = await db.query("SELECT * FROM users WHERE email = $1 ", [
@@ -137,6 +145,16 @@ passport.use(
     }
   })
 );
+
+passport.use("Goggle",
+  new GoggleStrategy({
+    clientId: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL: "http://localhost:3000/auth/goggle/secrets",
+    userprofileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
+  }, async (accessToken, refreshToken, profile, cb) => {
+    console.log(profile);
+  }));
 
 passport.serializeUser((user, cb) => {
   cb(null, user);
