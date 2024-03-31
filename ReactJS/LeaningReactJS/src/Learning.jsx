@@ -11,7 +11,7 @@ const Learning = () => {
         border: "2px solid black"
     }
 
-    const grettingStyle = {
+    const greetingStyle = {
         color: "red",
         fontWeight: "bold",
     }
@@ -20,20 +20,20 @@ const Learning = () => {
 
     if (time >= 0 && time <= 12) {
         greeting = "Good Morning"
-        grettingStyle.color = "red"
+        greetingStyle.color = "red"
 
     } else if (time >= 12 && time <= 18) {
         greeting = "Good Afternoon"
-        grettingStyle.color = "green"
+        greetingStyle.color = "green"
     } else {
         greeting = "Good Evening"
-        grettingStyle.color = "blue"
+        greetingStyle.color = "blue"
     }
     return (
         <div>
 
             <div>
-                <h1 style={grettingStyle}> {greeting} </h1>
+                <h1 style={greetingStyle}> { greeting } </h1>
             </div>
 
             <h1> Hello, {Fname + " " + Lname}!!</h1>
