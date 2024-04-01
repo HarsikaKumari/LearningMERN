@@ -39,7 +39,7 @@ const Learning = () => {
             <h1> Hello, {Fname + " " + Lname}!!</h1>
             <p> Your lucky number is {Math.floor(Math.random() * 11)}.</p>
 
-            <h1 style={customColor} > My Favourite Food </h1>
+            <h1 style={customColor} > My Favorite Food </h1>
             <div>
                 <img alt="bhindi" src="https://media.istockphoto.com/id/1208754471/photo/gajar-ka-halwa.jpg?s=1024x1024&w=is&k=20&c=bS1tDrUJ82TCtAeQPrtTb_JgJqb-cmHSEHR0ZU_mZGg=" />
 
