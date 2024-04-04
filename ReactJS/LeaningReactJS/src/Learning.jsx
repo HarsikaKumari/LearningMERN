@@ -1,43 +1,19 @@
 import React from 'react';
+import Heading from './heading';
 
 const Learning = () => {
     const Fname = "Harsika";
     const Lname = "Kumari";
     const img = "https://picsum.photos/200";
-    let greeting;
     const customColor = {
         color: "red",
         fontSize: "60px",
         border: "2px solid black"
     }
 
-    const greetingStyle = {
-        color: "red",
-        fontWeight: "bold",
-    }
-
-    let time = new Date().getHours();
-
-    if (time >= 0 && time <= 12) {
-        greeting = "Good Morning"
-        greetingStyle.color = "red"
-
-    } else if (time >= 12 && time <= 18) {
-        greeting = "Good Afternoon"
-        greetingStyle.color = "green"
-    } else {
-        greeting = "Good Evening"
-        greetingStyle.color = "blue"
-    }
     return (
         <div>
-
-            <div>
-                <h1 style={greetingStyle}> { greeting } </h1>
-            </div>
-
-            <h1> Hello, {Fname + " " + Lname}!!</h1>
-            <p> Your lucky number is {Math.floor(Math.random() * 11)}.</p>
+            <Heading />
 
             <h1 style={customColor} > My Favorite Food </h1>
             <div>
