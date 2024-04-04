@@ -1,12 +1,12 @@
 import './App.css';
-import Learning from './Learning';
+import Application from './components/application';
 
 
 function App() {
   return (
     <div> 
       
-      <Learning />
+      <Application />
     </div>
   );
 }
