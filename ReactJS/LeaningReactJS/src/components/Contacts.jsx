@@ -1,15 +1,20 @@
-import React from 'react'
+import '../App.css';
+import React from 'react';
 
 function Card(props) {
   return (
-    <div>
-      <h2> {props.name} </h2>
-      <img
-        src={props.url}
-        alt="avatar_img"
-      />
-      <p> {props.number} </p>
-      <p> {props.email} </p>
+    <div className='card'>
+      <div className='top'>
+        <h2 className='name'> {props.name} </h2>
+        <img className='circle-img'
+          src={props.url}
+          alt="avatar_img"
+        />
+      </div>
+      <div className='bottom'>
+        <p className='info'> {props.number} </p>
+        <p className='info'> {props.email} </p>
+      </div>
     </div>
   )
 }
@@ -17,7 +22,7 @@ function Card(props) {
 function contacts() {
   return (
     <div>
-      <h1>My Contacts</h1>
+      <h1 className='heading'>My Contacts</h1>
       <Card
         name="Beyonce"
         url="https://blackhistorywall.files.wordpress.com/2010/02/picture-device-independent-bitmap-119.jpg"
@@ -25,16 +30,12 @@ function contacts() {
         email="b@beyonce.com"
       />
 
-      <br />
-
       <Card
         name="Isha"
         url="https://media.istockphoto.com/id/148950212/photo/sloth-bear.jpg?s=612x612&w=0&k=20&c=pXrIyRb2uKTxR0-wx3dqdAR6YL8l9JgFriSanVAwhGA="
         number="587837985"
         email="ishuul@aa.com"
       />
-
-      <br />
 
       <Card
         name="Shishir"

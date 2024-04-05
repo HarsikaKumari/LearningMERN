@@ -1,6 +1,6 @@
 import React from 'react';
 import Heading from './Heading';
-import Contacts from "./Contacts";
+
 
 const Learning = () => {
     const Fname = "Harsika";
@@ -38,7 +38,7 @@ const Learning = () => {
                     © Copyright {new Date().getFullYear()}
                 </p>
             </center>
-            <Contacts />
+           
         </div>
     )
 }
