@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "./Card";
 import contacts from "../contacts";
-import '../App.css'
+import '../App.css';
 
 function App() {
   return (

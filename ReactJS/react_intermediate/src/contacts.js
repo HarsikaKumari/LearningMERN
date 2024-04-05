@@ -20,8 +20,8 @@ const contacts = [
       name: "Shishir",
       imgURL: 
       "https://img.freepik.com/free-photo/3d-rendering-cartoon-like-dog_23-2150780984.jpg?size=626&ext=jpg",
-      phone: "7091045216",
-      email: "sspdav02@gmail.com"
+      phone: "774866866",
+      email: "Shhishhir@shek.com"
     }
   ];
   
