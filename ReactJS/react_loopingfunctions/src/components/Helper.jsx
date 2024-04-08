@@ -3,9 +3,9 @@ import emojipedia from "../constants/emojipedia";
 
 const Helper = () => {
 
-    const meaning = emojipedia.map((items) => {
-       return items.meaning.substring(0, 100);
-    });
+    const meaning = emojipedia.map(items => 
+        items.meaning.substring(0, 100)
+    );
     console.log(meaning);
     return (
         <div>Helper</div>
