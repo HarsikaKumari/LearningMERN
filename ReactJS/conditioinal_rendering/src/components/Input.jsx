@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Input = () => {
+const Input = (props) => {
     return (
         <div>
-            <input type="text" placeholder="Username" />
+            <input type={props.type} placeholder={props.placeholder} />
             
         </div>
     )

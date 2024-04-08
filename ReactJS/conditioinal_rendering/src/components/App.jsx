@@ -1,26 +1,15 @@
 import React from "react";
 import Login from "./Login";
-import Input from "./Input";
+import Register from "./Register";
 
-
-let isLoggedin = false;
-
-function renderConditionaly() {
-
-    if (isLoggedin) {
-       return <h1>Hello</h1>
-    } else {
-        return <form className="form">
-            <Input />
-            <Login />
-        </form>
-    }
-}
+// let isLoggedIn = false;
+let isUserAuthorized = false;
 
 function App() {
     return (
         <div className="container">
-            {renderConditionaly()}
+            {/* {isLoggedIn ? <h1>Hello</h1> : <Login /> } */}
+            {isUserAuthorized ? <Login /> : <Register />}
         </div>
     );
 }
